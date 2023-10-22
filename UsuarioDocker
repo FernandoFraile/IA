@@ -1,0 +1,20 @@
+Es necesario generar muchos bytes aleatorios. Es una buena idea realizar
+alguna otra tarea (trabajar en otra ventana/consola, mover el ratón, usar
+la red y los discos) durante la generación de números primos. Esto da al
+generador de números aleatorios mayor oportunidad de recoger suficiente
+entropía.
+Es necesario generar muchos bytes aleatorios. Es una buena idea realizar
+alguna otra tarea (trabajar en otra ventana/consola, mover el ratón, usar
+la red y los discos) durante la generación de números primos. Esto da al
+generador de números aleatorios mayor oportunidad de recoger suficiente
+entropía.
+gpg: clave 39DE113313856C4E marcada como de confianza absoluta
+gpg: creado el directorio '/home/fernando/.gnupg/openpgp-revocs.d'
+gpg: certificado de revocación guardado como '/home/fernando/.gnupg/openpgp-revocs.d/C3F5D9529E982763B404344D39DE113313856C4E.rev'
+claves pública y secreta creadas y firmadas.
+
+pub   rsa3072 2023-09-29 [SC] [caduca: 2025-09-28]
+      C3F5D9529E982763B404344D39DE113313856C4E
+uid                      Fernando Fraile Mulas <fernando.fraile@rai.usc.es>
+sub   rsa3072 2023-09-29 [E] [caduca: 2025-09-28]
+

@@ -1,0 +1,48 @@
+
+
+Lo primero que tenemos es una clase Problem. Luego hay dos que salen de la Problem, Eight Puzzle y ViajaCom. Lo primero que se hace es ver si es resoluble, y hace un cheking. Hay 2 métricas de distancia que ven si la solución está lejos del 
+estado actual o del objetivo. La manhattan mide cuantos movimientos tiene que hacer cada pieza para estar en su sitio, sin 
+importar que haya piezas de por medio. 
+En la búsqueda en anchura hay que ir desarrollando todas las posibles. En la profundidad, se iría por una rama hasta acabarla. Cuando hago un número de movimientos, y no mejora, se dice que estoy en una meseta.
+
+En el mapa, la distancia más corta va a depender de la heurística. Ojo, en el código hay una correción de la distancia en línea recta entre ciudades, teniendo en cuenta la curvatura de la tierra. 
+
+La clase Board tiene un tooString que imprime el estado del tablero. 
+
+El assert del init de EightPuzzle da error si no es resoluble
+
+Distancia de Gasly? Se permiten movimientos en diagonal. 
+
+
+
+La función g(n) indica el coste acumulado desde el inicio hasta el momento actual
+
+
+2.1
+
+Para cada estado se utiliza una tupla, similar a una lista, pero que no se puede modificar. El estado inicial está representado por la tupla (1, 2, 3, 4, 5, 6, 7, 8, 0). El estado por lo tanto se representa como una tupla, situando un cero en el espacio en blanco, o utilizando la clase board, que se encarga de represetnarlo como si fuese el tablero, indicando una _ en el espacio en blanco. 
+
+2.2 
+
+El agente inteligente puede moverse en varias direcciones según en donde esté el espacio en blanco. Esta secuencia de movimientos posibles se define con una tupla de tuplas llamada moves, en la función actions. En cada posición de la tupla, se indican las posiciones a las que se podrían mover los números, sin poder moverlos en diagonal, solo de arriba a abajo o de izquierda a derecha. Cuando se empieza el algoritmo A*, se invoca a la búsqueda en profundidad definida anteriormente, con la heurística de Manhattan como h(n), para determinar cual es el movimiento óptimo. El algoritmo se encarga de buscar en cada movimiento la opción óptima según la heurística, y realiza los movimeintos con la función result de EightPuzzle. Dicha función convierte cada estado en una lista mutable nueva, para no borrar el anterior estado, y realiza el movimiento que se considera óptimo en ese caso, utilizando la función actions. Visto desde el punto de vista de la explicación de Problem, cada movimiento genera un hijo distinto, y se evalúa el coste de cada uno según la heurística, para tomar la decisión de hacer uno u otro. 
+
+2.3
+
+
+El coste de la solución obtenida se almacena en la variable path-cost de la clase Node. Conforme se van creando los nodos hijos, esta variable se va incrementando, teniendo en cuenta el acumulado y el del propio nodo. Las acciones realizadas se almacenan en cada nodo, individualmente, y luego se recuperan con la función path_actions, que recorre los nodos desde el último hasta la raíz, y se va imprimiendo cada acción que se realizó en cada momento. 
+
+2.4 
+
+He probado con la instancia de (5, 0, 2, 4, 7, 3, 1, 8, 6). Con A*, el coste del camino es de 17, al igual que con breadth_first_search. 
+
+
+
+
+
+
+
+
+
+
+
+
