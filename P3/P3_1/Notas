@@ -1,0 +1,15 @@
+
+
+
+OIO, sol ose pone una vez la semilla. Hacer regresión con 2 variables. 
+
+en LinearRegression().fit(X,y) X los datos de entrenamiento e y la salida
+
+Para combinar 2 variables de entrada hay que usar sknlearn. 
+
+
+Porque si se evalúa el rendimiento con los datos de entrenamiento, van a salir errores próximos a 0 y correlación 
+próxima a 1, ya que la recta se ha construído teniendo en cuenta esos datos, por lo que la estimación para esos 
+propios datos sería muy buena. Pero no sería real, ya que no se ajusta al resto de posibles datos, por lo que la 
+evaluación del modelo de regresión no sería correcta, y nos daría una falsa visión acerca de cuanto de bueno es 
+nuestro modelo. 
