@@ -1,0 +1,98 @@
+1. Respecto a la función de coste utilizada por el método k-medias implementado en la práctica, señala
+todas las respuestas correctas:
+
+-->Viene dada por la función j. 
+-->Se trata de la función a optimizar durante el aprendizaje del algoritmo
+X Se calcula como la media de las diferencias en valor absoluto componente a componente
+entre cada uno de los puntos y el centroide del clúster al que pertenece
+X  En el aprendizaje no supervisado no se utiliza una función de coste.
+X  Viene dada por la función calcula_distancias
+X  Se calcula con el error cuadrático medio, utilizando las diferencias entre cada predicción y el precio real.
+
+2. Respecto a la función calcula_distancias, señala todas las respuestas correctas:
+
+-->Se utiliza en la función k_medias para determinar cuál es el centroide más próximo a cada
+punto
+-->En la función k_medias, la función calcula_distancias nos devuelve una matriz que
+contiene la distancia euclídea al cuadrado de cada punto a cada centroide de la iteración
+actual.
+-->Si a y b son los dos vectores de entrada, su salida es una matriz en la que cada posición ij
+almacena la distancia euclídea al cuadrado del punto a[i] al punto b[j]
+X Se trata de la función de coste del algoritmo k-means.
+X En la función k_medias, la función calcula_distancias nos devuelve un vector que contiene la
+distancia euclídea al cuadrado de cada punto al centroide al que está asignado en la iteración
+actual.
+
+3. Respecto a la función actualiza_centr, señala todas las respuestas correctas
+
+-->  La expresión np.sum(x_cluster_i, axis=0)/x_cluster_i.shape[0] recalcula la posición del
+centroide de índice i para la próxima iteración del algoritmo.
+--> La variable x_cluster_i contiene el conjunto de viviendas asignadas al clúster de índice i
+en la iteración actual.
+X  La variable x_cluster_i es un vector que contiene el índice del clúster al que está asociada
+cada una de las viviendas del conjunto de datos
+X La expresión np.sum(x_cluster_i, axis=0)/x_cluster_i.shape[0] calcula la distancia euclídea
+componente a componente entre los puntos del clúster de índice i y el centroide asociado
+X Se utiliza durante el aprendizaje del algoritmo para actualizar la distancia de cada punto al
+centroide correspondiente al clúster al que está asignado
+X La variable x_cluster_i contiene el centroide de índice i en la iteración actual
+
+4. Respecto a la función k_medias_multi_ini, señala todas las respuestas correctas:
+
+--> Ejecuta m veces el algoritmo k-means, variando los centroides iniciales en cada una de
+ellas
+--> La variable mellor_asignacion contiene una lista con la asignación de las viviendas del
+conjunto de datos a los clústers determinados por los centroides que consiguieron el
+menor coste
+--> Para m inicializaciones aleatorias de los centroides, devuelve aquellos que obtienen el menor coste.
+
+X Para m inicializaciones aleatorias del valor de k, devuelve aquel que obtiene el menor coste
+X Realiza los mismos pasos que la función k_medias, pero en cada iteración actualiza los centroides de manera aleatoria.
+X Ejecuta m veces el algoritmo k-means y realiza un promedio del coste de cada ejecución
+X La variable mellor_asignacion contiene el índice del clúster que obtiene un menor coste de
+entre los k clústers finales
+X Realiza los mismos pasos que la función k_medias, pero en cada iteración actualiza los
+centroides de manera aleatoria
+
+5. Para responder a la pregunta 6 del guion de prácticas, has tenido que ejecutar un script que invoca al
+método k_medias_multi_ini para distintos valores de k. Respecto a este script, señala todas las
+respuestas correctas
+
+--> La variable clusters_finais contiene una lista con los agrupamientos obtenidos para cada k
+con la inicialización de los centroides que minimiza la función de coste.
+--> Se ejecuta 90 veces el algoritmo k_means
+X La variable clusters_finais contiene una lista con los agrupamientos obtenidos para cada k y
+para cada inicialización de los centroides.
+X La variable clusters_finais contiene el agrupamiento final obtenido con la inicialización de los
+centroides y el valor de k que minimizan la función de coste
+X Se ejecuta 9 veces el algoritmo k_means.
+
+6. Respecto a la selección del número de clústers (k), señala todas las respuestas correctas
+
+-->  El método del codo se basa en escoger un valor de k tal que, a partir de ese valor, la
+mejora del coste sea mucho menos significativa que para los valores anteriores.
+--> El valor más adecuado para k puede depender de la naturaleza del problema.
+--> El valor de k escogido mediante el método del codo no tiene por qué corresponderse con
+el número de clústers que minimiza la función de coste.
+X En general, un valor de k=4 se considera adecuado para cualquier problema de clustering
+X Debemos seleccionar siempre el mayor valor de k posible
+X El método del codo se basa en determinar el valor de k óptimo, es decir, aquel que minimiza la función de coste
+
+7. Respecto al agrupamiento final obtenido, señala todas las respuestas correctas:
+
+--> Las viviendas pertenecientes al clúster amarillo podrían pertenecer a la categoría de
+viviendas de lujo, con una superficie y precio muy elevados.
+--> La variable precio tiene una mayor influencia que la superficie a la hora de determinar el
+clúster al que pertenece una vivienda.
+X La variable superficie no tiene influencia a la hora de determinar el clúster al que pertenece
+una vivienda.
+
+X La variable superficie tiene una mayor influencia que el precio a la hora de determinar el
+clúster al que pertenece una vivienda.
+X La variable superficie tiene una mayor influencia que el precio a la hora de determinar el
+clúster al que pertenece una vivienda.
+X  Las viviendas pertenecientes al clúster verde podrían pertenecer a la categoría de pisos pequeños en zonas poco populares, que se
+caracterizan por un precio y una super�cie bajos
+
+
+
