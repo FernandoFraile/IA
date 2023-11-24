@@ -1,0 +1,45 @@
+1. Para responder a la pregunta 1 del guion de prácticas has tenido que construir la red neuronal
+Correctomodel_vivendas_1. Respecto a esta red, señala todas las respuestas correctas:
+
+-> Contiene 3 neuronas en la capa oculta de la red.
+-> Aprende 10 pesos: un peso por cada conexión que llega a la neurona de salida (3), un
+peso por cada conexión que llega a una neurona de la capa oculta (3) y un peso de bias
+X El número de pesos que aprende la red es un parámetro que especificamos a la hora de crear
+el modelo y es independiente del número de neuronas.
+X Aprende 10 pesos: un peso por cada conexión que llega a una neurona de la red (5) y un peso
+por cada conexión que sale de una neurona de la red (5).
+X Aprende 10 pesos: dos por cada neurona de la red.
+
+2. Para responder a la pregunta 2 del guion de prácticas, has tenido que normalizar el conjunto de datos
+mediante la función norm_min_max. Respecto a este proceso de normalización, señala todas las
+respuestas correctas:
+
+-> Debe normalizarse cada variable de manera independiente, ya que cada una puede tener 
+un rango de valores y un máximo y un mínimo distinto.
+-> Tratar conjuntamente los datos de train y test podría alterar el resultado de la normalización,
+por lo que estaríamos utilizando los datos de test para escoger un parámetro de nuestro
+modelo (el escalado).
+X En nuestra función norm_min_max, se utiliza el mínimo y el máximo del conjunto de train
+para normalizar el conjunto de train y el mínimo y el máximo del conjunto de test para
+normalizar el conjunto de test.
+X En nuestra función norm_min_max, se utiliza el mínimo y el máximo del conjunto de test para
+normalizar tanto el conjunto de train como el conjunto de test.
+X Para llevar a cabo el proceso de normalización no es necesario dividir el conjunto de datos en
+train y test, ya que es equivalente a tratarlos conjuntamente.
+
+3. Para responder a la pregunta 3 del guion de prácticas, has tenido que ejecutar el script que dibuja una gráfica con los modelos model_vivendas_1, model_vivendas_2 e model_vivendas_3, además del
+conjunto de datos. Respecto a esta gráfica, señala todas las respuestas correctas:
+
+--> Las líneas punteadas representan el precio de una vivienda en base a su superficie según 
+las predicciones de nuestros modelos.
+--> El modelo representado en verde (overfitting) se ajusta demasiado al conjunto de datos
+de entrenamiento y pierde su capacidad de generalización.
+--> El modelo representado en rojo (underfitting) no generaliza lo aprendido y no es capaz de
+reconocer patrones de los datos correctamente en el número de iteraciones considerado.
+X El modelo representado en rojo (underfitting) obtiene buenas predicciones para los datos de
+entrenamiento, pero probablemente será incapaz de obtener buenas predicciones para
+nuevos datos.
+X Las líneas punteadas representan los precios de las viviendas de nuestro conjunto de train.
+
+
+

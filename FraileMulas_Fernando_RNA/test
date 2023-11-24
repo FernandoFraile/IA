@@ -1,0 +1,110 @@
+1. Para responder a la pregunta 1 del guion de prácticas has tenido que construir la red neuronal
+Correctomodel_vivendas_1. Respecto a esta red, señala todas las respuestas correctas:
+
+-> Contiene 3 neuronas en la capa oculta de la red.
+-> Aprende 10 pesos: un peso por cada conexión que llega a la neurona de salida (3), un
+peso por cada conexión que llega a una neurona de la capa oculta (3) y un peso de bias
+X El número de pesos que aprende la red es un parámetro que especificamos a la hora de crear
+el modelo y es independiente del número de neuronas.
+X Aprende 10 pesos: un peso por cada conexión que llega a una neurona de la red (5) y un peso
+por cada conexión que sale de una neurona de la red (5).
+X Aprende 10 pesos: dos por cada neurona de la red.
+
+2. Para responder a la pregunta 2 del guion de prácticas, has tenido que normalizar el conjunto de datos
+mediante la función norm_min_max. Respecto a este proceso de normalización, señala todas las
+respuestas correctas:
+
+-> Debe normalizarse cada variable de manera independiente, ya que cada una puede tener 
+un rango de valores y un máximo y un mínimo distinto.
+-> Tratar conjuntamente los datos de train y test podría alterar el resultado de la normalización,
+por lo que estaríamos utilizando los datos de test para escoger un parámetro de nuestro
+modelo (el escalado).
+X En nuestra función norm_min_max, se utiliza el mínimo y el máximo del conjunto de train
+para normalizar el conjunto de train y el mínimo y el máximo del conjunto de test para
+normalizar el conjunto de test.
+X En nuestra función norm_min_max, se utiliza el mínimo y el máximo del conjunto de test para
+normalizar tanto el conjunto de train como el conjunto de test.
+X Para llevar a cabo el proceso de normalización no es necesario dividir el conjunto de datos en
+train y test, ya que es equivalente a tratarlos conjuntamente.
+
+3. Para responder a la pregunta 3 del guion de prácticas, has tenido que ejecutar el script que dibuja una gráfica con los modelos model_vivendas_1, model_vivendas_2 e model_vivendas_3, además del
+conjunto de datos. Respecto a esta gráfica, señala todas las respuestas correctas:
+
+--> Las líneas punteadas representan el precio de una vivienda en base a su superficie según 
+las predicciones de nuestros modelos.
+--> El modelo representado en verde (overfitting) se ajusta demasiado al conjunto de datos
+de entrenamiento y pierde su capacidad de generalización.
+--> El modelo representado en rojo (underfitting) no generaliza lo aprendido y no es capaz de
+reconocer patrones de los datos correctamente en el número de iteraciones considerado.
+X El modelo representado en rojo (underfitting) obtiene buenas predicciones para los datos de
+entrenamiento, pero probablemente será incapaz de obtener buenas predicciones para
+nuevos datos.
+X Las líneas punteadas representan los precios de las viviendas de nuestro conjunto de train.
+
+
+4. Para responder a la pregunta 4 del guion de prácticas, has tenido que ejecutar el script que representa gráficamente nuestra red modelo¬_vivendas_2 mediante la función plotMLP. Respecto a esta imagen, señala todas las respuestas correctas:
+
+-> Los nodos y flechas azules tienen un papel análogo al del término independiente en una
+función lineal.
+-> Los nodos y flechas en azul representan el sesgo o bias de las neuronas de la capa oculta
+y de la capa de salida
+X Los nodos y flechas en negro representan el sesgo o bias de las neuronas de la capa oculta y
+de la capa de salida.
+X El 1 en los nodos azules representan los pesos aprendidos para las conexiones de las
+neuronas de sesgo o bias
+X El 1 en los nodos azules podría ser substituido por cualquier otra constante, como por
+ejemplo el 0
+
+5. Para responder a la pregunta 5 del guion de prácticas, has tenido que ejecutar el script que obtiene
+dos modelos de redes neuronales, model_vivendas_5 y model_vivendas_6. Respecto a este script y su
+salida, señala todas las respuestas correctas:
+
+--> Con un valor del parámetro learning_rate más pequeño, obtenemos una menor velocidad 
+de aprendizaje durante el entrenamiento del modelo.
+--> Con un valor del parámetro learning_rate más grande, el modelo converge más
+rápidamente.
+--> La diferencia entre los tiempos de ejecución de ambos modelos es significativa, mientras que
+el ECM toma valores similares. Por eso, sería conveniente utilizar el modelo
+modelo_vivendas_5.
+X Con un valor del parámetro learning_rate más pequeño, obtenemos una mayor velocidad de
+aprendizaje durante el entrenamiento del modelo
+X Tal y como se ha realizado el entrenamiento, la red model_vivendas_6 estará más
+afectada por outliers (en caso de haberlos) que la red model¬_vivendas_5.
+
+6. Para responder a la pregunta 6 del guion de prácticas, has tenido que ejecutar el script que construye
+la red neuronal model_dixitos. Respecto a este modelo, señala todas las respuestas correctas:
+
+-> La red tiene tres capas ocultas con 20 neuronas en cada una de ellas
+-> Se determina el número de neuronas de la capa de entrada a partir del número de atributos
+del conjunto dixitos_train_X
+X La red tiene un total de 62 neuronas
+X La capa de entrada tiene 10 neuronas, una por cada posible dígito.
+X La red tiene 20 capas ocultas.
+
+7. Para responder a la pregunta 7 del guion de prácticas, has tenido que ejecutar varios scripts para
+calcular el accuracy del modelo model_dixitos. Respecto a estos scripts, señala todas las respuestas
+Puntuación:correctas:
+
+-> Atendiendo al accuracy obtenido, el modelo tiene una tasa de acierto de más del 88%
+-> La variable acertos es el número de dígitos del conjunto de test que fueron clasificados
+correctamente
+X La variable acertos coincide con el tamaño del vector coincidencias
+X La variable coincidencias es el número de dígitos del conjunto de test que fueron clasificados
+correctamente.
+X La variable coincidencias es un vector que contiene los dígitos del conjunto de test que fueron
+clasificados correctamente.
+
+8. Para responder a la pregunta 8 del guion de prácticas, has tenido que ejecutar un script en el que se
+crea la matriz de confusión del modelo model¬_dixitos. Respecto a la matriz de confusión obtenida,
+señala todas las respuestas correctas:
+
+-> La matriz nos permite deducir que la mayor parte de las confusiones se deben a la
+similitud entre la forma manuscrita de escribir los dígitos.
+-> Hay una mayor densidad numérica en la diagonal, lo que quiere decir que el modelo
+realiza correctamente la mayoría de las predicciones
+-> Entre los errores que más repite el modelo, se encuentra la confusión del dígito 9 con el
+dígito 4.
+X Entre los errores que más repite el modelo, se encuentra la confusión del dígito 3 con el dígito
+1.
+X El modelo clasificó correctamente el dígito 1 en aproximadamente el 61% de los casos.
+
